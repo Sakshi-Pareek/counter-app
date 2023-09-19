@@ -12,8 +12,11 @@
 </head>
 
 <body>
-    <section>
-        <div class="min-vh-100 bg-color d-flex">
+    <section class=" bg-color">
+        <div class="min-vh-100 d-flex flex-column">
+            <div class="d-flex justify-content-end">
+             <a href="https://jade-raindrop-ac9c87.netlify.app" class=""><img src="./assets/images/png/dark-theme-icon.png" alt="dark" class="w_30 me-3 pt-3"></a>
+            </div>
             <div class="flex-grow-1 d-flex justify-content-center align-items-center flex-column">
                 <h2 class="text-center pb-30">Advance Counter app</h2>
                 <div class="counter_box d-flex flex-column justify-content-center align-items-center">
@@ -34,11 +37,12 @@
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
         </script>
     <script>
+        let number = document.querySelector(".number");
+        let savetext = document.querySelector(".savetext");
+        
         let add = document.querySelector(".add");
         let save = document.querySelector(".save");
 
-        let number = document.querySelector(".number");
-        let savetext = document.querySelector(".savetext");
 
         add.addEventListener("click", function () {
             number.innerHTML = +number.innerHTML + 1;
@@ -47,7 +51,7 @@
 
         save.addEventListener("click", function () {
             if (number.innerHTML == 0) {
-                alert("please enter the number")
+                alert("please enter number")
                 save.classList.replace("save", "notallow");
             } else {
                 if (savetext.innerHTML == 0) {
